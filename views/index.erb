@@ -1,0 +1,30 @@
+
+    <p>Qual operação será realizada?</p>
+    <form action='cashflow' method='post'>
+      <ul class='unstyled'>
+        <div>
+          <label for="amount">Valor:</label>
+          <input type="number" id="amount" name="amount" required>
+        </div>
+        <div>
+          <label for="description">Descrição:</label>
+          <input type="text" id="description" name="description" required>
+        </div>
+        <% Transaction_Type.each do |id, text| %>
+          <li>
+            <label class='radio'>
+              <input type='radio' name='type' value='<%= id %>' id='ttype_<%= id %>' />
+              <%= text %>
+            </label>
+          </li>
+        <% end %>
+      </ul>
+      <input type="hidden" id="date" name="date" value="<%= Time.now.strftime('%Y-%m-%d') %>">
+      <button type='submit' class='btn btn-primary'>Salvar Transação</button>
+    </form>
+    <form action='summary' method='get'>
+      <ul class='unstyled'>
+      <button type='submit' class='btn btn-primary'>Apresentar Fluxo de Caixa</button>
+    </form>
+  
+

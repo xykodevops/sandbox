@@ -1,0 +1,22 @@
+<h1>Fluxo de Caixa no dia <%= params[:date] %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th> Data </th>
+      <th> Descrição </th>
+      <th> Tipo </th>
+      <th> Valor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @transactions.each do |t| %>
+      <tr>
+        <td><%= t[:date] %></td>
+        <td><%= t[:description] %></td>
+        <td><%= t[:type] == 'C' ? 'Credit' : 'Debit' %></td>
+        <td><%= t[:amount] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,26 @@
+ <h1>Fluxo de Caixa</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th> Sumário Diário </th>
+        <th> Data </th>
+        <th> Créditos </th>
+        <th> Débitos </th>
+        <th> Saldo Disponível </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% balance = 0 %>
+      <% summary.each do |date, values| %>
+        <% balance += values[:credit] - values[:debit] %>
+        <tr>
+          <td><form action='/summary/<%= date %>' method='get'> <button class='btn btn-info' type='submit' >Fluxo</button></form></td>
+          <td><%= date %></td>
+          <td><%= values[:credit] %></td>
+          <td><%= values[:debit] %></td>
+          <td><%= balance %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

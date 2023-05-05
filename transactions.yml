@@ -1,0 +1,54 @@
+---
+transactions:
+- :amount: '100000'
+  :description: Caixa inicial
+  :type: C
+  :date: '2023-05-01'
+- :amount: '10'
+  :description: venda 1
+  :type: C
+  :date: '2023-05-04'
+- :amount: '100'
+  :description: venda 2
+  :type: C
+  :date: '2023-05-04'
+- :amount: '50'
+  :description: compra x
+  :type: D
+  :date: '2023-05-04'
+- :amount: '50'
+  :description: venda 3
+  :type: C
+  :date: '2023-05-04'
+- :amount: '100'
+  :description: venda 1
+  :type: C
+  :date: '2023-05-05'
+- :amount: '200'
+  :description: venda 2
+  :type: C
+  :date: '2023-05-05'
+- :amount: '50'
+  :description: compra x
+  :type: D
+  :date: '2023-05-05'
+- :amount: '250'
+  :description: venda 3
+  :type: C
+  :date: '2023-05-05'
+- :amount: '700'
+  :description: venda 3
+  :type: D
+  :date: '2023-05-06'
+- :amount: '10000'
+  :description: Venda de carro
+  :type: C
+  :date: '2023-05-06'
+- :amount: '2000'
+  :description: Venda de caneta
+  :type: C
+  :date: '2023-05-05'
+- :amount: '100'
+  :description: Compra de papel
+  :type: D
+  :date: '2023-05-05'
