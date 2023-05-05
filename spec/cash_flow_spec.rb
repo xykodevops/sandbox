@@ -1,6 +1,6 @@
 require 'rspec'
 require 'rack/test'
-require_relative '../cash_flow.rb'
+require_relative '../cash_flow'
 
 set :environment, :test
 
