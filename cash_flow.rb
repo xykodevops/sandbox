@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-#coding: utf-8
+# coding: utf-8
 
 require 'sinatra'
 require 'yaml/store'
@@ -8,14 +8,29 @@ require 'yaml'
 set :bind, '0.0.0.0'
 set :port, 8080
 
-Transaction_Type = {
+TRANSACTION_TYPE = {
   'D' => 'Debit',
-  'C' => 'Credit',
-}
+  'C' => 'Credit'
+}.freeze
 
+
+# Classe base para transações financeiras.
 class Transaction
-  attr_accessor :amount, :date, :description
+ 
+  # Valor da transação
+  attr_accessor :amount
   
+  # Data da transação
+  attr_accessor :date
+  
+  # Descrição da transação
+  attr_accessor :description
+
+  # Inicializa uma nova instância da classe Transaction
+  #
+  # @param amount [Numeric] valor da transação
+  # @param date [Date] data da transação
+  # @param description [String] descrição da transação 
   def initialize(amount, date, description)
     @amount = amount
     @date = date
@@ -23,9 +38,11 @@ class Transaction
   end
 end
 
+# Representa uma transação de débito financeiro
 class Debit < Transaction
 end
 
+# Representa uma transação de crédito financeiro
 class Credit < Transaction
 end
 
@@ -57,7 +74,6 @@ post '/cashflow' do
   redirect '/'
 end
 
-
 get '/summary' do
   data = YAML.load_file('transactions.yml')
   transactions = data['transactions']
@@ -65,9 +81,10 @@ get '/summary' do
   summary = {}
   transactions.each do |t|
     date = DateTime.parse(t[:date]).strftime('%Y-%m-%d')
-    if summary[date].nil?
-      summary[date] = { credit: 0, debit: 0 }
-    end
+    # if summary[date].nil?
+    #   summary[date] = { credit: 0, debit: 0 }
+    # end
+    summary[date] = { credit: 0, debit: 0 } if summary[date].nil?
     if t[:type] == 'C'
       summary[date][:credit] += t[:amount].to_i
     else
@@ -82,4 +99,3 @@ get '/summary/:date' do
   @transactions = YAML.load_file('transactions.yml')['transactions'].select { |t| t[:date] == params[:date] }
   erb :day_summary
 end
-
