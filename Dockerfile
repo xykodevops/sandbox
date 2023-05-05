@@ -14,4 +14,4 @@ RUN bundle install
 EXPOSE 8080
 
 # Define o comando para iniciar o servidor
-CMD ["ruby", "cash_flow", "-o", "0.0.0.0"]
+CMD ["ruby", "cash_flow.rb", "-o", "0.0.0.0"]

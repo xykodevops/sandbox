@@ -52,3 +52,23 @@ transactions:
   :description: Compra de papel
   :type: D
   :date: '2023-05-05'
+- :amount: '50'
+  :description: description
+  :type: C
+  :date: '2023-05-05'
+- :amount: '50'
+  :description: description
+  :type: C
+  :date: '2023-05-05'
+- :amount: '110'
+  :description: venda xy
+  :type: C
+  :date: '2023-05-05'
+- :amount: '50'
+  :description: description
+  :type: C
+  :date: '2023-05-05'
+- :amount: '50'
+  :description: description
+  :type: C
+  :date: '2023-05-05'

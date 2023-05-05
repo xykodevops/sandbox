@@ -80,7 +80,6 @@ end
 
 get '/summary/:date' do
   @transactions = YAML.load_file('transactions.yml')['transactions'].select { |t| t[:date] == params[:date] }
-  puts @transactions
   erb :day_summary
 end
 
