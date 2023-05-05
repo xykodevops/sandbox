@@ -110,5 +110,6 @@ Agora basta acessar a aplicação via broswer como "http://localhost:8080"
 
 Caso seja necessario parar o container basta digitar:
 	```$ docker stop $(docker ps -q --filter ancestor=cash_flow)```
+
 Necessitando limpar todo o ambiente, utilize:
 		```$ docker system prune -af --volumes```
