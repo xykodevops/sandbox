@@ -19,7 +19,7 @@ Para instalar as bibliotecas necessárias, pode-se utilizar o gerenciador de pac
 
 Para executar a aplicação, basta executar o arquivo cash_flow:
 ```
-		      ruby cash_flow
+		      ruby cash_flow.rb
 ```
 O servidor web será iniciado e estará acessível em http://localhost:8080.
 
@@ -113,3 +113,24 @@ Caso seja necessario parar o container basta digitar:
 
 Necessitando limpar todo o ambiente, utilize:
 		```$ docker system prune -af --volumes```
+
+
+# Code Analysis
+
+## RSpec
+
+Foi gerado um conjunto de testes unitários para Cash_Flow usando a ferramenta RSpec.
+O objetivo é validar a estrutura básica da aplicação. Basicamente está dividida em 3 partes:
+A primeira seção testa o objeto Transaction e confirma a sua inicialização correta.
+A segunda seção testa a criação de objetos Debit e Credit e verifica se eles são instâncias de Transaction.
+A terceira seção testa o aplicativo web em si usando o módulo Rack::Test::Methods para permitir acesso as rotas HTTP testando se o retorno foi como esperado.
+
+O arquivo básico de testes é **spec/cash_flow_spac.rb**.
+O comando rspec deve ser rodado da raiz do projeto cm a seguinte sintaxe:
+       ```$ rspec spec/cash_flow_spec.rb```
+O resultado espera é:
+```
+.......
+Finished in 0.03377 seconds (files took 0.15522 seconds to load)
+7 examples, 0 failures
+```
