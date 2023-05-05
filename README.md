@@ -9,6 +9,7 @@ Para executar a aplicação, é necessário ter o Ruby 2.0 ou superior instalado
 - Sinatra
 - YAML
 - PUMA
+
 Para instalar as bibliotecas necessárias, pode-se utilizar o gerenciador de pacotes do Ruby, o gem. Exemplo:
 ```
 			gem install sinatra
@@ -120,9 +121,13 @@ Necessitando limpar todo o ambiente, utilize:
 ## RSpec
 
 Foi gerado um conjunto de testes unitários para Cash_Flow usando a ferramenta RSpec.
+
 O objetivo é validar a estrutura básica da aplicação. Basicamente está dividida em 3 partes:
+
 A primeira seção testa o objeto Transaction e confirma a sua inicialização correta.
+
 A segunda seção testa a criação de objetos Debit e Credit e verifica se eles são instâncias de Transaction.
+
 A terceira seção testa o aplicativo web em si usando o módulo Rack::Test::Methods para permitir acesso as rotas HTTP testando se o retorno foi como esperado.
 
 O arquivo básico de testes é **spec/cash_flow_spac.rb**.
