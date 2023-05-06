@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
-# coding: utf-8
-
 require 'sinatra'
 require 'yaml/store'
 require 'yaml'
@@ -60,10 +58,10 @@ post '/cashflow' do
   store.transaction do
     store['transactions'] ||= []
     store['transactions'] << {
-      amount: ,
-      description: ,
-      type: ,
-      date: ,
+      amount:,
+      description:,
+      type:,
+      date:
     }
   end
 

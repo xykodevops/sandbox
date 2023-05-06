@@ -84,3 +84,11 @@ transactions:
   :description: description
   :type: C
   :date: '2023-05-05'
+- :amount: '50'
+  :description: description
+  :type: C
+  :date: '2023-05-05'
+- :amount: '50'
+  :description: description
+  :type: C
+  :date: '2023-05-05'
