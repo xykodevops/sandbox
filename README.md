@@ -9,7 +9,6 @@ Para executar a aplicação, é necessário ter o Ruby 2.0 ou superior instalado
 - Sinatra
 - YAML
 - PUMA
-
 Para instalar as bibliotecas necessárias, pode-se utilizar o gerenciador de pacotes do Ruby, o gem. Exemplo:
 ```
 			gem install sinatra
@@ -20,9 +19,19 @@ Para instalar as bibliotecas necessárias, pode-se utilizar o gerenciador de pac
 
 Para executar a aplicação, basta executar o arquivo cash_flow:
 ```
-		      ruby cash_flow.rb
+		      ruby cash_flow
 ```
 O servidor web será iniciado e estará acessível em http://localhost:8080.
+
+``![HomePage](/img/home_page.png)
+*Apresentação da home Page da aplicação. Após preencher os campos valor, descrição e opção de crédito/débito, pressionar em "Salvar Transação". O botão "Apresentar Fluxo de Caixa" redirecionará para o sumário de todos os dias registrados.*
+
+``![Summary](/img/summary.png)
+*A página que apresenta o "Fluxo de Caixa" mostra a movimentação totalizada diáriamente e o fluxo final (caontabilidade do caixa diário). Cada dia têm um link que redicecionará para a apresentação do fluxo de caixa no dia específico (botão "Fluxo"). 
+
+``![SummaryDay](/img/summary_day.png)
+*A página que apresenta todo o "Fluxo de Caixa" realizado em um dia especifico. 
+
 
 ## Funcionamento
 
@@ -111,47 +120,5 @@ Agora basta acessar a aplicação via broswer como "http://localhost:8080"
 
 Caso seja necessario parar o container basta digitar:
 	```$ docker stop $(docker ps -q --filter ancestor=cash_flow)```
-
 Necessitando limpar todo o ambiente, utilize:
 		```$ docker system prune -af --volumes```
-
-
-# Code Analysis
-
-	Para usar os comandos de rspec ou rubocop. primeiro executar o comando de preparação do ambiente de testes:
-	```
-	$ bundle install
-	```	
-
-## RSpec
-
-Foi gerado um conjunto de testes unitários para Cash_Flow usando a ferramenta RSpec.
-
-O objetivo é validar a estrutura básica da aplicação. Basicamente está dividida em 3 partes:
-
-A primeira seção testa o objeto Transaction e confirma a sua inicialização correta.
-
-A segunda seção testa a criação de objetos Debit e Credit e verifica se eles são instâncias de Transaction.
-
-A terceira seção testa o aplicativo web em si usando o módulo Rack::Test::Methods para permitir acesso as rotas HTTP testando se o retorno foi como esperado.
-
-O arquivo básico de testes é **spec/cash_flow_spac.rb**.
-O comando rspec deve ser rodado da raiz do projeto cm a seguinte sintaxe:
-       ```$ rspec spec/cash_flow_spec.rb```
-O resultado espera é:
-	```
-	.......
-	Finished in 0.03377 seconds (files took 0.15522 seconds to load)
-	7 examples, 0 failures
-	```
-
-## Rubocop
-
-O comando rubocop deve ser rodado da raiz do projeto cm a seguinte sintaxe:
-       ```$ rubocop```
-O resultado espera é:
-	```
-	Inspecting 3 files
-	...
-	3 files inspected, no offenses detected
-	```
