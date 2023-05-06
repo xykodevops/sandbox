@@ -10,7 +10,7 @@
           <label for="description">Descrição:</label>
           <input type="text" id="description" name="description" required>
         </div>
-        <% Transaction_Type.each do |id, text| %>
+        <% TRANSACTION_TYPE.each do |id, text| %>
           <li>
             <label class='radio'>
               <input type='radio' name='type' value='<%= id %>' id='ttype_<%= id %>' />

@@ -13,16 +13,14 @@ TRANSACTION_TYPE = {
   'C' => 'Credit'
 }.freeze
 
-
 # Classe base para transações financeiras.
 class Transaction
- 
   # Valor da transação
   attr_accessor :amount
-  
+
   # Data da transação
   attr_accessor :date
-  
+
   # Descrição da transação
   attr_accessor :description
 
@@ -30,7 +28,7 @@ class Transaction
   #
   # @param amount [Numeric] valor da transação
   # @param date [Date] data da transação
-  # @param description [String] descrição da transação 
+  # @param description [String] descrição da transação
   def initialize(amount, date, description)
     @amount = amount
     @date = date
@@ -53,7 +51,6 @@ end
 store = YAML::Store.new('transactions.yml')
 
 post '/cashflow' do
-
   amount = params['amount']
   description = params['description']
   type = params['type']
@@ -63,10 +60,10 @@ post '/cashflow' do
   store.transaction do
     store['transactions'] ||= []
     store['transactions'] << {
-      amount: amount,
-      description: description,
-      type: type,
-      date: date
+      amount: ,
+      description: ,
+      type: ,
+      date: ,
     }
   end
 
@@ -92,7 +89,7 @@ get '/summary' do
     end
   end
 
-  erb :summary, locals: { summary: summary }
+  erb :summary, locals: { summary: }
 end
 
 get '/summary/:date' do
