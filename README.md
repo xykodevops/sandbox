@@ -9,6 +9,7 @@ Para executar a aplicação, é necessário ter o Ruby 2.0 ou superior instalado
 - Sinatra
 - YAML
 - PUMA
+
 Para instalar as bibliotecas necessárias, pode-se utilizar o gerenciador de pacotes do Ruby, o gem. Exemplo:
 ```
 			gem install sinatra
@@ -27,7 +28,7 @@ O servidor web será iniciado e estará acessível em http://localhost:8080.
 *Apresentação da home Page da aplicação. Após preencher os campos valor, descrição e opção de crédito/débito, pressionar em "Salvar Transação". O botão "Apresentar Fluxo de Caixa" redirecionará para o sumário de todos os dias registrados.*
 
 ``![Summary](/img/summary.png)
-*A página que apresenta o "Fluxo de Caixa" mostra a movimentação totalizada diáriamente e o fluxo final (caontabilidade do caixa diário). Cada dia têm um link que redicecionará para a apresentação do fluxo de caixa no dia específico (botão "Fluxo"). 
+*A página que apresenta o "Fluxo de Caixa" mostra a movimentação totalizada diáriamente e o fluxo final (contabilidade do caixa diário). Cada dia têm um link que redicionará para a apresentação do fluxo de caixa no dia específico (botão "Fluxo"). 
 
 ``![SummaryDay](/img/summary_day.png)
 *A página que apresenta todo o "Fluxo de Caixa" realizado em um dia especifico. 
@@ -116,7 +117,7 @@ Identificando o container:
 ```
 ```$  docker logs $(docker ps -q --filter ancestor=cash_flow)```
 
-Agora basta acessar a aplicação via broswer como "http://localhost:8080"
+Agora basta acessar a aplicação via browser como "http://localhost:8080"
 
 Caso seja necessario parar o container basta digitar:
 	```$ docker stop $(docker ps -q --filter ancestor=cash_flow)```
