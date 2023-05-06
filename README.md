@@ -118,6 +118,11 @@ Necessitando limpar todo o ambiente, utilize:
 
 # Code Analysis
 
+	Para usar os comandos de rspec ou rubocop. primeiro executar o comando de preparação do ambiente de testes:
+	```
+	$ bundle install
+	```	
+
 ## RSpec
 
 Foi gerado um conjunto de testes unitários para Cash_Flow usando a ferramenta RSpec.
@@ -134,8 +139,19 @@ O arquivo básico de testes é **spec/cash_flow_spac.rb**.
 O comando rspec deve ser rodado da raiz do projeto cm a seguinte sintaxe:
        ```$ rspec spec/cash_flow_spec.rb```
 O resultado espera é:
-```
-.......
-Finished in 0.03377 seconds (files took 0.15522 seconds to load)
-7 examples, 0 failures
-```
+	```
+	.......
+	Finished in 0.03377 seconds (files took 0.15522 seconds to load)
+	7 examples, 0 failures
+	```
+
+## Rubocop
+
+O comando rubocop deve ser rodado da raiz do projeto cm a seguinte sintaxe:
+       ```$ rubocop```
+O resultado espera é:
+	```
+	Inspecting 3 files
+	...
+	3 files inspected, no offenses detected
+	```
