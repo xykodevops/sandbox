@@ -123,3 +123,40 @@ Caso seja necessario parar o container basta digitar:
 	```$ docker stop $(docker ps -q --filter ancestor=cash_flow)```
 Necessitando limpar todo o ambiente, utilize:
 		```$ docker system prune -af --volumes```
+
+
+## Conclusão
+
+# Rspec
+
+Os testes são unitários apra a aplicação cash_flow . Ele usa a biblioteca RSpec para escrever e executar testes e a biblioteca Rack::Test para testar o aplicativo web.
+Ele é dividido basicamente em 3 partes:
+A primeira seção valida o objeto Transaction e suas instâncias.
+A segunda seção testa a criação de objetos Debit e Credit e verifica se eles são instâncias de Transaction foram associadas corretamente.
+A terceira seção testa o aplicativo web em si. Ele inclui o módulo Rack::Test::Methods para permitir verificar o acesso as rotas. Cada rota HTTP é testada de forma diferente verificando a funcionalidade do aplicativo e retono esperado.
+
+O primeiro teste acessa a raiz do aplicativo '/' e verifica se a resposta é bem-sucedida (código HTTP 200).
+O segundo teste acessa a rota '/summary' e verifica se a resposta é bem-sucedida (código HTTP 200).
+O terceiro teste envia uma transação ao aplicativo usando a rota '/cashflow' e verifica se a resposta é um redirecionamento (código HTTP 302). Em seguida, segue o redirecionamento e verifica se a rota atual é a raiz do aplicativo.
+O quarto teste envia uma transação ao aplicativo usando a rota '/cashflow' e, em seguida, acessa a rota '/summary/2023-05-05' para ver o resumo do fluxo de caixa para esse dia específico. Ele verifica se a resposta é bem-sucedida (código HTTP 200).
+Esses testes ajudam a garantir que o aplicativo de fluxo de caixa esteja funcionando corretamente e possa detectar erros ou regressões à medida que o código é modificado ou atualizado.
+
+Para rodar os testes unitários , basta usar o comando abaixo, na raiz do projeto:
+	```
+	rspec spec/cash_flow_spec.rb
+	```
+O resultado esperado é:
+``![RSpec](/img/rspec.png)
+*Resultado do comando rspec aplicado ao projeto.
+
+
+# Rubocop
+
+Para rodar a verificação do código, basta usar o comando abaixo, na raiz do projeto:
+	```
+	rrubocop
+	```
+O resultado esperado é:
+``![RSpec](/img/rubocop.png)
+*Resultado do comando tubocop aplicado ao projeto.
+
