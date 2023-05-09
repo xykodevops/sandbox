@@ -75,7 +75,7 @@ A aplicação está armazenada no github (perfil público) e pode ser acessada p
 
 ## Conclusão
 
-Esta documentação técnica apresentou uma visão geral da aplicação em Ruby que utiliza o framework Sinatra para gerenciamento de transações financeiras. O programa é capaz de armazenar transações em um arquivo YAML e
+Esta documentação técnica apresentou uma visão geral da aplicação em Ruby que utiliza o framework Sinatra para gerenciamento de transações financeiras. O programa é capaz de armazenar transações em um arquivo YAML.
 
 # Cash Flow in Docker
 
