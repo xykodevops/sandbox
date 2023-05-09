@@ -204,20 +204,17 @@ A Aplicação consiste básicamente no relacionamento de 3 classes:
 
 A classe Transaction é a superclasse, e as classes Debit e Credit são subclasses que herdam seus atributos e métodos. Além disso, podemos considerar uma classe Transaction_Store para lidar com o armazenamento das transações em um arquivo YAML.
 
-O diagrama de classes ficaria da seguinte forma:
-
-O resultado esperado é:
+O diagrama de classes é o seguinte:
 
 ![Diagrama de Classes](/img/classes.png)
 
 
-Neste diagrama, podemos ver que Debit e Credit são subclasses de Transaction, que contém os atributos amount, date e description. A classe Transaction_Store é responsável por lidar com o armazenamento das transações em um arquivo YAML, representado pelo atributo file_path.
+Basicamente o diagrama apresenta A Classe Transactio e as subclasses Debit e Credit. A classe Transaction_Store (virtual) é responsável por lidar com o armazenamento das transações em um arquivo YAML.
 
-Além do diagrama de classes, podemos também criar um diagrama de casos de uso para representar as funcionalidades da aplicação. Para isso, podemos considerar os seguintes casos de uso:
+O diagrama de casos represata as seguintes ações:
 
 Registrar uma transação
 Visualizar o resumo das transações por dia
-O diagrama de casos de uso ficaria da seguinte forma:
 
 ![Diagrama de Casos](/img/cases.png)
 
