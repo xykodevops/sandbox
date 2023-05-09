@@ -145,8 +145,11 @@ Para rodar os testes unitários , basta usar o comando abaixo, na raiz do projet
 	```
 	rspec spec/cash_flow_spec.rb
 	```
+
 O resultado esperado é:
-``![RSpec](/img/rspec.png)
+
+![RSpec](/img/rspec.png)
+
 *Resultado do comando rspec aplicado ao projeto.
 
 
@@ -156,7 +159,66 @@ Para rodar a verificação do código, basta usar o comando abaixo, na raiz do p
 	```
 	rrubocop
 	```
+
 O resultado esperado é:
-``![RSpec](/img/rubocop.png)
-*Resultado do comando tubocop aplicado ao projeto.
+
+![RSpec](/img/rubocop.png)
+
+*Resultado do comando rubocop aplicado ao projeto.
+
+
+
+## Arquitetura da Aplicação
+
+A aplicação é composta pelos seguintes componentes:
+
+- `cash_flow.rb`: arquivo principal que define as rotas e o comportamento da aplicação.
+- `views/`: diretório que contém os arquivos de visualização (templates) usados pela aplicação.
+- `img/`: diretório que contém arquivos estáticos.
+- `spec/`: diretório que contém os arquivos de teste da aplicação.
+- `Gemfile`: arquivo que define as dependências da aplicação.
+- `Dockerfile`: Instruções básicas para subir a aplicação em um container.
+
+A aplicação segue uma arquitetura MVC (Model-View-Controller), em que:
+
+- O `cashPflow.rb` atua como o controlador da aplicação, recebendo solicitações HTTP e lidando com as respostas.
+- Os arquivos em `views/` atuam como as visualizações da aplicação, exibindo dados para o usuário e recebendo entrada do usuário.
+- Os arquivos YAML em `data/` atuam como o modelo da aplicação, armazenando e recuperando dados.
+- Os arquivos em `spec/` atuam como testes automatizados da aplicação.
+
+A aplicação usa as seguintes tecnologias:
+
+- Sinatra: um framework de aplicação web em Ruby.
+- YAML: uma linguagem de serialização de dados.
+- RSpec: um framework de teste para Ruby.
+- Rack: uma interface entre servidores web e aplicativos Ruby.
+
+
+## Diagrama da Aplicação
+
+A Aplicação consiste básicamente no relacionamento de 3 classes:
+
+	- Transaction
+	- Debit
+	- Credit
+
+A classe Transaction é a superclasse, e as classes Debit e Credit são subclasses que herdam seus atributos e métodos. Além disso, podemos considerar uma classe Transaction_Store para lidar com o armazenamento das transações em um arquivo YAML.
+
+O diagrama de classes ficaria da seguinte forma:
+
+O resultado esperado é:
+
+![Diagrama de Classes](/img/classes.png)
+
+
+Neste diagrama, podemos ver que Debit e Credit são subclasses de Transaction, que contém os atributos amount, date e description. A classe Transaction_Store é responsável por lidar com o armazenamento das transações em um arquivo YAML, representado pelo atributo file_path.
+
+Além do diagrama de classes, podemos também criar um diagrama de casos de uso para representar as funcionalidades da aplicação. Para isso, podemos considerar os seguintes casos de uso:
+
+Registrar uma transação
+Visualizar o resumo das transações por dia
+O diagrama de casos de uso ficaria da seguinte forma:
+
+![Diagrama de Casos](/img/cases.png)
+
 
