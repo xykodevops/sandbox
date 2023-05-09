@@ -125,7 +125,7 @@ Necessitando limpar todo o ambiente, utilize:
 		```$ docker system prune -af --volumes```
 
 
-## Conclusão
+## Code Analysis
 
 # Rspec
 
