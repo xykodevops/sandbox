@@ -1,4 +1,4 @@
-# Cash Flow App
+# Cash Flow App (sandbox)
 
 A aplicação em questão é um programa em **Ruby** que utiliza o **framework Sinatra** para criar uma aplicação web para gerenciamento de transações financeiras. O objetivo do programa é permitir o registro de transações de crédito e débito, armazenando-as em um arquivo YAML, bem como gerar um resumo das transações registradas.
 
