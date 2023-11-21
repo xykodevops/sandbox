@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+
 # Program: Cash_flow
 # Date:    06/05/23'
 # Author:  Xyko
